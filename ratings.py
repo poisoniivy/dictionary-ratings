@@ -9,10 +9,6 @@ def get_restaurants(filename):
         line = line.split(":")
         restaurants[line[0]] = line[1]
 
-    rest_name = raw_input("Enter a restaurant name: ")
-    rating = raw_input("Enter a rating: ")
-
-    restaurants[rest_name] = rating
     return restaurants
 
 
@@ -23,5 +19,12 @@ def print_ratings(restaurants):
         print "{} is rated at {}.".format(restaurant, rating)
 
 
+def add_restaurant(restaurants):
+    rest_name = raw_input("Enter a restaurant name: ")
+    rating = raw_input("Enter a rating: ")
+
+    restaurants[rest_name] = rating
+
 restaurants = get_restaurants("scores.txt")
+add_restaurant(restaurants)
 print_ratings(restaurants)
